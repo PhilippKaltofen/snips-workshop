@@ -27,25 +27,25 @@ response_alright = ["Okay.", "Wie bitte?"]
 
 def how_are_you_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_variation[random.randint(0, len(response_variation))] + response_snips
+    response = response_variation[random.randint(0, len(response_variation) -1)] + response_snips
     hermes.publish_continue_session(session_id, response, INTENT_FILTER_FEELING)
 
 
 def feeling_good_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_good[random.randint(0, len(response_good))]
+    response = response_good[random.randint(0, len(response_good) -1)]
     hermes.publish_end_session(session_id, response)
 
 
 def feeling_bad_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_bad[random.randint(0, len(response_bad))]
+    response = response_bad[random.randint(0, len(response_bad) -1)]
     hermes.publish_end_session(session_id, response)
 
 
 def feeling_alright_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_alright[random.randint(0, len(response_alright))]
+    response = response_alright[random.randint(0, len(response_alright) -1)]
     hermes.publish_end_session(session_id, response)
 
 
