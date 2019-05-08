@@ -11,7 +11,7 @@ def main():
         h.subscribe_intent(INTENT_HOW_ARE_YOU, how_are_you_callback) \
          .start()
 
-responses = ["I'm not doing great", "I'm very well, thank you.", "Nice Bro, as always.", "What do you think?", "Dude, look at me.", "Please kill me."]
+responses = ["Tut mir leid, ich verstehe kein Englisch.", "Sehr gut."]
 
 def how_are_you_callback(hermes, intent_message):
     session_id = intent_message.session_id
