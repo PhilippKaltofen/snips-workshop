@@ -19,6 +19,7 @@ laune = ""
 iteration = 0
 
 def aufmuntern_callback(hermes, intent_message):
+    global iteration
     session_id = intent_message.session_id
     if iteration == 0:
         response = response_aufmuntern
@@ -28,8 +29,10 @@ def aufmuntern_callback(hermes, intent_message):
     hermes.publish_continue_session(session_id, response, INTENT_CHECK)
 
 def check_callback(hermes, intent_message):
-    laune = intent_message.laune
-    if laune > 8:
+    global laune    
+    session_id = intent_message.session_id
+    laune = intent_message.slots.laune.first().value
+    if floats(laune) > 8:
         response = "Okay, dann brauchst du mich ja gar nicht mehr."
     else:
         response = "Gut, ich erzaehle dir einen Witz. " + witze(random.randint(0, len(witze) - 1))
