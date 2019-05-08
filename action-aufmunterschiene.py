@@ -31,6 +31,6 @@ def check_callback(hermes, intent_message):
     laune = intent_message.laune
     if laune > 8:
         response = "Okay, dann brauchst du mich ja gar nicht mehr."
-    else
+    else:
         response = "Gut, ich erzaehle dir einen Witz. " + witze(random.randint(0, len(witze) - 1))
     hermes.publish_continue_session(session_id, response, INTENT_AUFMUNTERN)
