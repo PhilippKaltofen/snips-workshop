@@ -22,7 +22,7 @@ def aufmuntern_callback(hermes, intent_message):
     session_id = intent_message.session_id
     if iteration == 0:
         response = response_aufmuntern
-    else
+    else:
         response = response_aufmuntern_weiter
     iteration+=1
     hermes.publish_continue_session(session_id, response, INTENT_CHECK)
