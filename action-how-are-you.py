@@ -21,7 +21,7 @@ def main():
 
 response_variation = ["Mir geht es nicht gut. ", "Mir gehts scheiße. Schau doch mal aus dem Fenster. "]
 response_snips = "Und dir?"
-response_good = ["Schoen für dich.", "Wenigstens einem", "Na dann...", "Wer - hat gefragt?", "Coole Story."]
+response_good = ["Schoen fuer dich.", "Wenigstens einem", "Na dann...", "Wer - hat gefragt?", "Coole Story."]
 response_bad = ["Ach echt, dir auch?", "Was ne Überraschung.", "Dann sind wir schon zwei."]
 response_alright = ["Okay.", "Wie bitte?"]
 
