@@ -19,9 +19,9 @@ def main():
          .subscribe_intent(INTENT_ALRIGHT, feeling_alright_callback) \
          .start()
 
-response_variation = ["Mir geht es gut.", "Mir geht es nicht gut.", "Mir gehts scheiße. Schau doch mal aus dem Fenster."]
-response_snips = "Und dir?"
-response_good = ["Schön für dich.", "Wenigstens einem", "Na dann...", "Wer - hat gefragt?", "Coole Story."]
+response_variation = ["Mir geht es nicht gut.", "Mir gehts scheiße. Schau doch mal aus dem Fenster."]
+response_snips = " Und dir?"
+response_good = ["Schoen für dich.", "Wenigstens einem", "Na dann...", "Wer - hat gefragt?", "Coole Story."]
 response_bad = ["Ach echt, dir auch?", "Was ne Überraschung.", "Dann sind wir schon zwei."]
 response_alright = ["Okay.", "Wie bitte?"]
 
@@ -33,19 +33,19 @@ def how_are_you_callback(hermes, intent_message):
 
 def feeling_good_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_good
+    response = response_good[random.randint(0, len(response_good))]
     hermes.publish_end_session(session_id, response)
 
 
 def feeling_bad_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_bad
+    response = response_bad[random.randint(0, len(response_bad))]
     hermes.publish_end_session(session_id, response)
 
 
 def feeling_alright_callback(hermes, intent_message):
     session_id = intent_message.session_id
-    response = response_alright
+    response = response_alright[random.randint(0, len(response_alright))]
     hermes.publish_end_session(session_id, response)
 
 
